@@ -1,0 +1,43 @@
+
+Core concepts:
+    Core rules:
+        - space in the Universe is divided in Chunks
+        - Chunks contains any Data relevant to the zone they represent
+        - Data in the Chunk is only visible from within the Chunk or through a Connection.
+        - Chunks can contain other Chunks
+        - Objects can move.
+        - Data can move between Chunks.
+    Side rules:
+        - There is no 'draw distance', only variable LODs, which may include 'not being rendered'
+        - Any information that is related to an Object should be kept by it.
+        - Only information affecting multiple Objects or that is not relevant to Objects should be kept as non-Objects non-Universal Data.
+
+
+Definitions:
+
+(Voc): Vocabular Definition
+(Type): In-Engine type
+
+externally(Voc): 'out of the chunk'
+locally(Voc): 'within the chunk'
+limited access(Voc): can only communicate to an object it has a Connection with.
+universal access(Voc): can communicate with all objects within defined scope.
+
+Universe(Voc): Every Data handled by the engine.
+
+Data(Voc)(Type): Anything managed by the Engine.
+
+Connection(Voc): Saying there is a Connection between two Data mean they are aware of each other.
+
+Chunk(Voc)(Type)(Data): Variably sized zone of space defined as a right rectangular prism/rectangular cuboid. It can contains any kind of Data that is not universal to the whole Universe, which makes that data local to a zone of space, to a chunk.
+
+Object(Voc)(Type)(Data): Data with a visual representation. Limited access only. It cannot be universal.
+
+ChunkObject(Voc)(Type)(Data): Object that is also a Chunk
+
+Rule(Voc)(Type)(Data): Data with no visual representation that has universal access locally and limited access externally. It cannot be universal.
+
+Property(Voc)(Type)(Data): Data with no visual representation that has limited access locally and externally. It cannot be universal.
+
+SuperRule(Voc)(Type)(Data): Data with no visual representation with universal access to the Universe (ex: Physics)
+
