@@ -1,0 +1,24 @@
+The rendering of a frame happen in the following way:
+
+1. browse universe tree up and down and determine what need to be rendered, 'which Ressources, where'
+2. query the Ressource manager to determine what is loaded and where is it in memory, and if it is in the GPU memory as well.
+2bis. If the ressource manager find the ressource isn't loaded, it returns a reference to a generic replacement and start the procedure to load the actual Ressource.
+
+use deferred rendering:
+have shaders that take rotation and position matrixes/quaternion+coords, model memory emplacement, texture.
+shaders must be able to batch render models.
+3. render geometry with color and textures (diffuse)
+4. render Z-buffer
+5. render normals
+No specular pass? Direct query to material? Or put data into texture?putting the 'material definition' in a texture is probably faster
+Shadow map for reflections? Maybe render shadows for the cubemap? Full render without reflections for the cubemap???
+6. Render light BRDF style using previously calculated informations.
+Variable depth of reflections?
+
+end of frame.
+
+
+http://blog.selfshadow.com/publications/s2015-shading-course/hoffman/s2015_pbs_physics_math_slides.pdf
+https://www.fxguide.com/featured/game-environments-parta-remember-me-rendering/
+http://www.adriancourreges.com/blog/2015/11/02/gta-v-graphics-study/
+BRDF

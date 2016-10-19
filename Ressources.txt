@@ -1,0 +1,5 @@
+Ressources are whatever is immutable data (models, textures, sounds...).
+
+Ressources references are stored as a path in chunk's on-disk data (relative to /, which is the root of the game's Ressources filesystem)
+When something request a Ressource, it is searched in a hash map which is the list of loaded Ressources.
+If it is not found, it is scheduled to be loaded and put in the database, if possible, the Data is given a generic Ressource to work with until the actual Ressource is loaded (for example, a generic red square in the case of a model requested by the renderer).
