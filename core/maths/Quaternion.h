@@ -1,11 +1,17 @@
-#include "maths.h"
+#include "maths_internal.h"
 
+#pragma once
+
+
+// possible optimisation: caching vector and angle
+// ALL EULER ANGLES IN RADIANS
 namespace Maths {
 
 	class Quaternion
 	{
 	public:
 		Quaternion(const COORDINATE_TYPE a,const COORDINATE_TYPE b,const COORDINATE_TYPE c,const COORDINATE_TYPE d);
+		Quaternion(const COORDINATE_TYPE pitch, const COORDINATE_TYPE roll, const COORDINATE_TYPE yaw);
 		const Quaternion	operator*(Quaternion &other);
 		const Vector		vector(void) const;
 		const COORDINATE_TYPE	angle(void) const;
@@ -18,10 +24,10 @@ namespace Maths {
 		void			setC(const COORDINATE_TYPE c) { this->c = c; }
 		void			setD(const COORDINATE_TYPE d) { this->d = d; }
 	protected:
-		COORDINATE_TYPE	a; // real part
-		COORDINATE_TYPE	b;
-		COORDINATE_TYPE	c;
-		COORDINATE_TYPE	d;
+		COORDINATE_TYPE	a; // real part, sometimes w
+		COORDINATE_TYPE	b; // x
+		COORDINATE_TYPE	c; // y
+		COORDINATE_TYPE	d; // z
 	};
 
 }

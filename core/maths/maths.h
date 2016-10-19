@@ -1,9 +1,6 @@
-#include "../definitions.h"
-
 #pragma once
 
-namespace Maths
-{
-	class Quaternion;
-	class Vector;
-}
+#include "../definitions.h"
+
+#include "Quaternion.h"
+#include "Vector.h"

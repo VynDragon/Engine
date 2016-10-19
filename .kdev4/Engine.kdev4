@@ -1,3 +1,6 @@
+[Buildset]
+BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00\x0c\x00E\x00n\x00g\x00i\x00n\x00e)
+
 [CMake]
 Build Directory Count=1
 Current Build Directory Index=0
@@ -9,6 +12,27 @@ CMake Binary=/usr/bin/cmake
 Environment Profile=
 Extra Arguments=
 Install Directory=
+
+[Launch]
+Launch Configurations=Launch Configuration 0
+
+[Launch][Launch Configuration 0]
+Configured Launch Modes=execute
+Configured Launchers=nativeAppLauncher
+Name=core
+Type=Native Application
+
+[Launch][Launch Configuration 0][Data]
+Arguments=
+Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x03\x00\x00\x00\x0c\x00E\x00n\x00g\x00i\x00n\x00e\x00\x00\x00\x08\x00c\x00o\x00r\x00e\x00\x00\x00\x08\x00c\x00o\x00r\x00e)
+Dependency Action=Build
+EnvironmentGroup=
+Executable=file:///home/vdragon/Projects/Engine/build/bin/game
+External Terminal=konsole --noclose --workdir %workdir -e %exe
+Project Target=Engine,core,core
+Use External Terminal=false
+Working Directory=file:///home/vdragon/Projects/Engine/build
+isExecutable=true
 
 [Project]
 VersionControlSupport=kdevgit
