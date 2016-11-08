@@ -1,0 +1,4 @@
+Render only require read
+Script and Physic require Write and read
+Therefore, Script and Physics operations cannot happen on the same element at the same time.
+A mutex is used to tell if a operation is currently reading or writing the Data, if it is locked, the Data is placed at the back of the queue for treatement.

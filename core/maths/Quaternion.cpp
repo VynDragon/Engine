@@ -2,7 +2,7 @@
 #include "Vector.h"
 #include <math.h>
 
-namespace	Maths
+namespace	Actinium::Maths
 {
 	Quaternion::Quaternion(const COORDINATE_TYPE a,const COORDINATE_TYPE b,const COORDINATE_TYPE c,const COORDINATE_TYPE d)
 	{

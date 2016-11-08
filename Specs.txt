@@ -31,7 +31,7 @@ Connection(Voc): Saying there is a Connection between two Data mean they are awa
 
 Chunk(Voc)(Type)(Data): Variably sized zone of space defined as a right rectangular prism/rectangular cuboid. It can contains any kind of Data that is not universal to the whole Universe, which makes that data local to a zone of space, to a chunk.
 
-Object(Voc)(Type)(Data): Data with a visual representation. Limited access only. It cannot be universal.
+Object(Voc)(Type)(Data): Data with a visual representation. It cannot be universal.
 
 ChunkObject(Voc)(Type)(Data): Object that is also a Chunk
 

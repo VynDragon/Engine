@@ -1,6 +1,6 @@
 #include "Data.h"
 
-namespace Parts
+namespace Actinium::Data
 {
 	
 	

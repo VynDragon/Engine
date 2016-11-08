@@ -2,8 +2,12 @@
 
 #include "../definitions.h"
 
-namespace Parts
+namespace Actinium::Data
 {
 	class Data;
 	class Position;
+	class Chunk;
+	class DataManager;
+	class Object;
 }
+

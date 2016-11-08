@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace Maths {
+namespace Actinium::Maths {
 
 	class Vector
 	{

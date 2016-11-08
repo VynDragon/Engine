@@ -1,6 +1,6 @@
 #include "Vector.h"
 
-namespace	Maths
+namespace	Actinium::Maths
 {
 	Vector::Vector(const COORDINATE_TYPE x,const COORDINATE_TYPE y,const COORDINATE_TYPE z)
 	{

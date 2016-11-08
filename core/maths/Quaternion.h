@@ -5,7 +5,7 @@
 
 // possible optimisation: caching vector and angle
 // ALL EULER ANGLES IN RADIANS
-namespace Maths {
+namespace Actinium::Maths {
 
 	class Quaternion
 	{

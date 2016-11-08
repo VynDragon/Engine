@@ -2,7 +2,7 @@
 
 #include "../definitions.h"
 
-namespace Maths
+namespace Actinium::Maths
 {
 	class Quaternion;
 	class Vector;

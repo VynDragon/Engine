@@ -1,7 +1,9 @@
 set(SRC "core.cpp"
-	"Chunk.cpp"
-	"parts/Position.cpp"
-	"parts/Data.cpp"
+	"data/Position.cpp"
+	"data/Data.cpp"
+	"data/DataManager.cpp"
+	"data/Chunk.cpp"
+	"data/Object.cpp"
 	"maths/Quaternion.cpp"
 	"maths/Vector.cpp")
 add_library(core SHARED ${SRC})
