@@ -30,9 +30,9 @@ namespace Actinium::Data
 		virtual void			setAngles(const Maths::Quaternion &other) { this->cPosition.setAngles(other); }
 		virtual	void			setPosition(const Maths::Vector &other) { this->cPosition.setPosition(other); }
 		// DataManager
-		virtual int						add(Actinium::Data::Data* that) { return this->cDataManager.add(that); }
-		virtual int						remove(Actinium::Data::Data* that) { return this->cDataManager.remove(that); }
-		virtual const std::set<Actinium::Data::Data*>		&get(const std::type_index &that) const { return this->cDataManager.get(that); }
+		virtual int							add(Actinium::Data::Data* that) { return this->cDataManager.add(that); }
+		virtual int							remove(Actinium::Data::Data* that) { return this->cDataManager.remove(that); }
+		virtual const std::unordered_set<Actinium::Data::Data*>		&get(const std::type_index &that) const { return this->cDataManager.get(that); }
 		
 	protected:
 		COORDINATE_TYPE		scale;

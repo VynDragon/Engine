@@ -10,7 +10,7 @@
 namespace Actinium::Data
 {
 #define ADDWITHDYNAMICCAST(type, add_to, arg, success_action, failure_action) { if (type casted = dynamic_cast<type>(arg))\
-		if (add_to[typeid(type)].insert(casted).second) { \
+		if (casted != NULL ? add_to[typeid(type)].insert(arg).second : false) { \
 			success_action;\
 		}\
 		else\
@@ -23,8 +23,8 @@ namespace Actinium::Data
 	}\
 }
 #define REMOVEWITHDYNAMICCAST(type, add_to, arg, success_action, failure_action) { if (type casted = dynamic_cast<type>(arg))\
-		if (add_to[typeid(type)].erase(casted)) { \
-		success_action;\
+		if (casted != NULL ? add_to[typeid(type)].erase(arg) : false) { \
+			success_action; \
 		}\
 		else\
 		{\
@@ -43,7 +43,7 @@ namespace Actinium::Data
 		typeid(Actinium::Data::Chunk)
 	};
 
-	const std::set<Actinium::Data::Data*>	DefaultDataManagerIp::zero;
+	const std::unordered_set<Actinium::Data::Data*>	DefaultDataManagerIp::zero;
 	
 	DefaultDataManagerIp::DefaultDataManagerIp()
 	{
@@ -82,7 +82,7 @@ namespace Actinium::Data
 		REMOVEWITHDYNAMICCAST(Actinium::Data::Chunk*, this->datas, that, ret = 0, )
 		return ret;
 	}
-	const std::set<Actinium::Data::Data*>	&DefaultDataManagerIp::get(const std::type_index &that) const
+	const std::unordered_set<Actinium::Data::Data*>	&DefaultDataManagerIp::get(const std::type_index &that) const
 	{
 		auto ret = this->datas.find(that);
 		if (ret != this->datas.end())

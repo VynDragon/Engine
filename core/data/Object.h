@@ -31,10 +31,13 @@ namespace Actinium::Data
 		virtual void			setAngles(const Maths::Quaternion &other) { this->cPosition.setAngles(other); }
 		virtual	void			setPosition(const Maths::Vector &other) { this->cPosition.setPosition(other); }
 		// Renderable
+		// Physical
+		virtual bool	movable(void) const { return cPhysical.movable(); }
 	protected:
 		// Composition
-		DefaultDataIp		cData;
-		DefaultPositionIp	cPosition;
+		DefaultDataIp			cData;
+		DefaultPositionIp		cPosition;
+		Physics::DefaultPhysicalIp	cPhysical;
 		//DefaultRenderableIp	cRenderable;
 	};
 }

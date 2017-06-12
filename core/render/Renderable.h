@@ -3,10 +3,10 @@
 
 namespace Actinium::Render
 {
-	class Renderable : public Actinium::Data::Data
+	class Renderable
 	{
 	public:
-		virtual int	getModel(void) = 0;
+//		virtual int	getModel(void) = 0;
 	protected:
 		
 	};
