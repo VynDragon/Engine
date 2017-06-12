@@ -41,3 +41,8 @@ Property(Voc)(Type)(Data): Data with no visual representation that has limited a
 
 SuperRule(Voc)(Type)(Data): Data with no visual representation with universal access to the Universe (ex: Physics)
 
+
+X is forward
+Y is right
+Z is up
+

@@ -5,6 +5,9 @@
 
 // possible optimisation: caching vector and angle
 // ALL EULER ANGLES IN RADIANS
+
+// q = a + bi + cj + dk
+// q = w + xi + yj + zk
 namespace Actinium::Maths {
 
 	class Quaternion
@@ -12,8 +15,10 @@ namespace Actinium::Maths {
 	public:
 		Quaternion(const COORDINATE_TYPE a,const COORDINATE_TYPE b,const COORDINATE_TYPE c,const COORDINATE_TYPE d);
 		Quaternion(const COORDINATE_TYPE pitch, const COORDINATE_TYPE roll, const COORDINATE_TYPE yaw);
-		const Quaternion	operator*(Quaternion &other);
-		const Vector		vector(void) const;
+		Quaternion(const Vector &vector, const COORDINATE_TYPE angle);
+		const Quaternion	operator*(const Quaternion &other) const;
+		const Vector		vector(void) const; // referenced to forward
+		const Quaternion	conjugate(void) const;
 		const COORDINATE_TYPE	angle(void) const;
 		const COORDINATE_TYPE	getA(void)  const { return a; }
 		const COORDINATE_TYPE	getB(void)  const { return b; }

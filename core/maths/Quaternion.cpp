@@ -25,7 +25,16 @@ namespace	Actinium::Maths
 		this->c = t0 * t2 * t5 + t1 * t3 * t4;
 		this->d = t1 * t2 * t4 - t0 * t3 * t5;
 	}
-	const Quaternion	Quaternion::operator*(Quaternion &other)
+	Quaternion::Quaternion(const Vector &vector, const COORDINATE_TYPE angle)
+	{
+		const COORDINATE_TYPE sin_angle = std::sin(angle / 2.0);
+		Vector normalized_vector = vector.normalized();
+		this->b = normalized_vector.getX() * sin_angle;
+		this->c = normalized_vector.getY() * sin_angle;
+		this->d = normalized_vector.getZ() * sin_angle;
+		this->a = std::cos(angle / 2.0);
+	}
+	const Quaternion	Quaternion::operator*(const Quaternion &other) const
 	{
 		return Quaternion(\
 		other.a * this->a - other.b * this->b - other.c * this->c - other.d * this->d,\
@@ -35,6 +44,9 @@ namespace	Actinium::Maths
 	}
 	const Vector		Quaternion::vector(void) const
 	{
+		/*Quaternion quaternion_vector = Quaternion(up.getX(), up.getY(), up.getZ(), 0);
+		Quaternion result = quaternion_vector * (*this) * this->conjugate();
+		return Vector(result.a, result.b, result.c);*/
 		if (this->a == (COORDINATE_TYPE)1.0)
 			return Vector(0, 0, 0);
 		const COORDINATE_TYPE aa = sqrt(1 - this->a * this->a);
@@ -43,5 +55,10 @@ namespace	Actinium::Maths
 	const COORDINATE_TYPE	Quaternion::angle(void) const
 	{
 		return ((COORDINATE_TYPE)2.0 * acos(this->a));
+	}
+	
+	const Quaternion	Quaternion::conjugate(void) const
+	{
+		return Quaternion(a, -b, -c, -d);
 	}
 }

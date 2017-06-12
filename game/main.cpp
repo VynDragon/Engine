@@ -21,10 +21,10 @@ int main(int ac, char **av)
 	std::cout << man.remove(dis) << std::endl;
 	std::cout << man.remove(dis) << std::endl;
 	std::cout << man.remove(dis1) << std::endl;
-	/*std::cout.precision(22);
-	std::cout << "hello world" << std::endl;
-	Actinium::Maths::Quaternion q(0,M_PI / (COORDINATE_TYPE)2.0,0);
+	
+	std::cout.precision(22);
+	Actinium::Maths::Quaternion q(Actinium::Maths::Vector(0.0,0.0,1.0), M_PI / (COORDINATE_TYPE)2.0);
 	std::cout << q.angle() << std::endl;
 	std::cout << q.vector().getX() << "," << q.vector().getY() << "," << q.vector().getZ() << std::endl;
-	std::cout << q.getA() << "," << q.getD() << "," << q.getC() << ","<< q.getD() <<std::endl;*/
+	std::cout << q.getB() << "," << q.getC() << "," << q.getD() << ","<< q.getA() <<std::endl;
 }
