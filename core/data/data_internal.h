@@ -9,5 +9,6 @@ namespace Actinium::Data
 	class Chunk;
 	class DataManager;
 	class Object;
+	class BoundingBox;
 }
 

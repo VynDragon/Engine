@@ -5,4 +5,5 @@
 #include "Chunk.h"
 #include "DataManager.h"
 #include "Object.h"
+#include "BoundingBox.h"
 
