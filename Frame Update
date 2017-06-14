@@ -17,9 +17,11 @@ Variable depth of reflections?
 
 end of frame.
 
+infinity clipping distance is that the object must be at least 1 pixel size to be added to the render list.
 
 http://blog.selfshadow.com/publications/s2015-shading-course/hoffman/s2015_pbs_physics_math_slides.pdf
 https://www.fxguide.com/featured/game-environments-parta-remember-me-rendering/
 http://www.adriancourreges.com/blog/2015/11/02/gta-v-graphics-study/
 http://www.adriancourreges.com/blog/2016/09/09/doom-2016-graphics-study/
+https://www.gamedev.net/resources/_/technical/general-programming/frustum-culling-r4613
 BRDF
