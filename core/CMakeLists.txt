@@ -4,6 +4,7 @@ set(SRC "core.cpp"
 	"data/DataManager.cpp"
 	"data/Chunk.cpp"
 	"data/Object.cpp"
+	"data/DataExplorer.cpp"
 	"physics/Physical.cpp"
 	"maths/Quaternion.cpp"
 	"maths/Vector.cpp")
