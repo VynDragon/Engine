@@ -7,7 +7,7 @@ namespace Actinium::Data
 		
 	}
 	
-	const std::unordered_set<Actinium::Data::Data*>		&DefaultChunkExplorerIp::filter(const std::unordered_set<Actinium::Data::Data*> &datas, const std::type_index &that)
+	const std::unordered_set<Actinium::Render::Renderable*>		&DefaultChunkExplorerIp::getRenderablesFromChunks(const std::unordered_set<Actinium::Data::Chunk*> &chunks)
 	{
 		
 	}

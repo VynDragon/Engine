@@ -25,3 +25,11 @@ http://www.adriancourreges.com/blog/2015/11/02/gta-v-graphics-study/
 http://www.adriancourreges.com/blog/2016/09/09/doom-2016-graphics-study/
 https://www.gamedev.net/resources/_/technical/general-programming/frustum-culling-r4613
 BRDF
+
+
+
+In the logical side of thing:
+When a object is loaded, it can get hooked to script manager which will then call its hook each frame if needed, or when a specific event happen.
+Otherwise, scripts can send data into a global storage area that can be used by other scripts that know the proper ID when they are themselve rans.
+For example, a virtual money transaction happening is stored in the area, and a superrule read it and store in its data, which the superrule store in a persistant file (superrules are always run because they are rules created in a chunk that is always loaded, the root chunk)
+Another example, is a non-persistent communication device, where the player enter text, it is sent to an ID, and is only queried when a script reading from that ID is triggered.

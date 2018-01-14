@@ -6,11 +6,11 @@
 
 int main(int ac, char **av)
 {
-	Actinium::Data::DefaultDataManagerIp man;
+	Actinium::Data::DefaultChunkIp man;
 	//auto dis = new Actinium::Data::Object;
-	Actinium::Data::Data *dis = new Actinium::Data::DefaultChunkIp;
-	Actinium::Data::Data *dis1 = new Actinium::Data::DefaultChunkIp;
-	Actinium::Data::Data *dis2 = new Actinium::Data::DefaultObjectIp;
+	Actinium::Data::Chunk *dis = new Actinium::Data::DefaultChunkIp(man);
+	Actinium::Data::Chunk *dis1 = new Actinium::Data::DefaultChunkIp(dis);
+	Actinium::Data::Data *dis2 = new Actinium::Data::DefaultObjectIp();
 	std::cout << man.add(dis) << std::endl;
 	std::cout << man.add(dis1) << std::endl;
 	std::cout << man.add(dis2) << std::endl;

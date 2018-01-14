@@ -7,6 +7,11 @@ Core concepts:
         - Chunks can contain other Chunks
         - Objects can move.
         - Data can move between Chunks.
+	- The script exchange zone is a table of IDs which give access to a stack (as such to enable concurrent access to the ID and making the scripts reading the ID able to retrieve everything other scripts set it as).
+	- When a stack in the the script exchange zone is empty, it is deleted with more or less haste (TBD in function of optimization)
+	- Chunks are loaded and their members considered for rendering if all those conditions are fullfilled:
+		- they are bigger than a pixel on the screen (so if a huge chunk is really far away, it wont get loaded because because it would be smaller than a pixel on the screen)
+		- some form of occlusion check (TBD)
     Side rules:
         - There is no 'draw distance', only variable LODs, which may include 'not being rendered'
         - Any information that is related to an Object should be kept by it.

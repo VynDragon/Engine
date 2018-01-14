@@ -10,6 +10,8 @@ namespace Actinium::Data
 	{
 	public:
 		virtual COORDINATE_TYPE 	getMeterScale(void) const = 0; // the size of the meter, relative to one unit, as scale * unit = meter value
+		virtual const Chunk		*getParent() const = 0;
+		virtual void			setParent(const Chunk* that) = 0;
 		
 	protected:
 	};
@@ -18,6 +20,9 @@ namespace Actinium::Data
 	{
 	public:
 		virtual COORDINATE_TYPE getMeterScale(void) const { return scale; }
+		virtual const Chunk	*getParent(void) const { return this->parent; }
+		virtual void		setParent(const Chunk* that) { this->parent = that; }
+ 		DefaultChunkIp(const Chunk* parent = NULL, COORDINATE_TYPE scale = 1.0) { this->parent = parent, this->scale = scale; }
 		
 		// Composition
 		// Data
@@ -42,6 +47,7 @@ namespace Actinium::Data
 		virtual const std::unordered_set<Actinium::Data::Data*>		&get(const std::type_index &that) const { return this->cDataManager.get(that); }
 	protected:
 		COORDINATE_TYPE		scale = 1.0;
+		const Chunk		*parent;
 		
 		
 		// Composition
